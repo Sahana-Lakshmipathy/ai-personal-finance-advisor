@@ -1,0 +1,5 @@
+{
+  "name": "AI Personal Finance Advisor",
+  "description": "A responsive web application—your 24/7 Personal Finance Advisor—that ingests and categorizes every income and expense in real time into “Needs,” “Wants,” or “Savings/Investments,” computes net cash flow, renders interactive pie‑charts of category shares, and automatically flags any category exceeding 30% of total spend. It also provides automated weekly financial reports with actionable insights.",
+  "requestFramePermissions": []
+}
