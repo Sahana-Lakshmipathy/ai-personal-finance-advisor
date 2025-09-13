@@ -10,10 +10,15 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const categorizeExpense = async (description: string): Promise<Category> => {
   try {
-    const prompt = `Categorize the following expense: "${description}". Respond with only one of these exact categories: "Needs", "Wants", or "Savings/Investments". Do not add any explanation, punctuation, or formatting.`;
+    const prompt = `Categorize the following expense: "${description}". Respond with only one of these exact categories:
+    "Needs", "Wants", or "Savings/Investments". Do not add any explanation, punctuation, or formatting.
+    - Needs are essential for survival or daily living, like rent, groceries, and work-related expenses.
+    - Wants are non-essential purchases that improve quality of life, like entertainment or hobbies.
+    - Savings/Investments are funds set aside for the future, like an emergency fund or retirement contributions.
+    `;
     
     const response: GenerateContentResponse = await ai.models.generateContent({
-        model: 'gemini-2.5-flash-preview-04-17',
+        model: 'gemini-1.5-flash',
         contents: prompt,
         config: {
           temperature: 0,
